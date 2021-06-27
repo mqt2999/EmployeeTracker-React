@@ -1,28 +1,20 @@
 import React from "react";
+import { format } from 'date-fns'
 
-function EmpRow () {
+function EmpRow (props) {
     return (
-        <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td> hello</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+        
+     <tbody>
+      {props.resultsFilter.map(results => (
+        <tr key={results.email}>
+          <td><img alt="Employee" src={results.picture.thumbnail} /></td> 
+          <td>{results.name.first} {results.name.last}</td>
+          <td>{results.phone}</td>
+          <td><a href={"mailto:" + results.email}>{results.email}</a></td>
+          <td>{ format(new Date(results.dob.date), 'MM/dd/yyyy')}</td>
+        </tr>
+      ))}
+    </tbody>
     )
 }
 export default EmpRow;
