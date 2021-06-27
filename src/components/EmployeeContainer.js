@@ -12,7 +12,7 @@ function EmpContainer (props) {
   <thead>
     <tr>
       <th scope="col">Image</th>
-      <th className="pb-2" scope="col">Name   <button className='btn btn-sm px-0' onClick={props.handleSort}><i className="bi bi-arrow-down-up"></i></button></th>
+      <th className="pb-2" scope="col">Name   <button className='btn btn-sm px-0' onClick={props.handleSort}><i> Sort</i></button></th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
       <th scope="col">DOB</th>
